@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <style>
+      #mapdiv {
+        height: 100vh;
+      }
+    </style>
+    <title>Webmap 201</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <!-- <div id="app"></div> -->
+    <!-- <script src="src/index.js"></script> -->
+    <div id="side-bar" class="col-md-3 order-first"></div>
+    <div id="mapdiv" class="col-md-9 order-last"></div>
+    <script>
+      // const mymap = L.map("mapdiv", {
+      //   center: [35.68944, 139.69167],
+      //   zoom: 13
+      // });
+      // const lyrOSM = L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png");
+      // mymap.addLayer(lyrOSM);
+      let mymap;
+      let lyrOSM;
+      $(document).ready(function () {
+        mymap = L.map("mapdiv", {
+          center: [35.68944, 139.69167],
+          zoom: 13
+        });
+        lyrOSM = L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png");
+        mymap.addLayer(lyrOSM);
+      });
+    </script>
+  </body>
+</html>
